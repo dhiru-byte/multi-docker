@@ -15,11 +15,12 @@ after_success:
   - docker build -t dhirendrabyte/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  
-  - docker push dhirendrabyte/multi-client
+  - docker images
   - docker push dhirendrabyte/multi-nginx
   - docker push dhirendrabyte/multi-server
-  - docker push dhirendrabyte/multi-worker
+  - docker push dhirendrabyte/multi-
+  - docker push dhirendrabyte/multi-client
+
 
 # deploy:
 #   provider: elasticbeanstalk
