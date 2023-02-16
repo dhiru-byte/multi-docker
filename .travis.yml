@@ -9,18 +9,17 @@ script:
   - docker run dhirendrabyte/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t dhirendrabyte/multi-clientel ./client
+  - docker build -t dhirendrabyte/multi-client ./client
   - docker build -t dhirendrabyte/multi-nginx ./nginx
   - docker build -t dhirendrabyte/multi-server ./server
   - docker build -t dhirendrabyte/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker images
+  
+  - docker push dhirendrabyte/multi-client
   - docker push dhirendrabyte/multi-nginx
   - docker push dhirendrabyte/multi-server
-  - docker push dhirendrabyte/multi-
-  - docker push dhirendrabyte/multi-clientel
-
+  - docker push dhirendrabyte/multi-worker
 
 # deploy:
 #   provider: elasticbeanstalk
