@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client
-      image: dhirendrabyte/multi-worker
+      image: dhirendrabyte/multi-client
       ports:
-        - containerPort: 9999
+        - containerPort: 3000
