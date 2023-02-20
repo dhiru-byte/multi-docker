@@ -34,3 +34,5 @@ spec:
                 secretKeyRef:
                   name: pgpassword
                   key: PGPASSWORD
+
+#### kubectl create secret generic pgpassword --from-literal PGPASSWORD=123abc456 
